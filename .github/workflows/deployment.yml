@@ -75,13 +75,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-files
-      - name: Get job test artifacts
-        id: step-get-test-report
-        uses: actions/download-artifact@v3
-        with:
-          name: test-report
       - name: Output jobs artifacts
-        if: failure() && steps.step-get-test-report.outcome == 'failure'
         run: ls
       - name: Deploy
         run: echo "Deploy.."
