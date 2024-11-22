@@ -80,3 +80,11 @@ jobs:
         run: ls
       - name: Deploy
         run: echo "Deploy.."
+  report:
+    needs: [lint, deploy]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output infos
+        run: |
+          echo "Something went wrong..."
+          echo "${{ toJSON (github) }}"
