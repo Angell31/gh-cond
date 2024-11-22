@@ -70,6 +70,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-files
+      - name: Get job test artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: test-report
       - name: Output jobs artifacts
         run: ls
       - name: Deploy
